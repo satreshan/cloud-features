@@ -1,0 +1,6 @@
+com/sap/cc/SpringBootUsersApplicationTests.class
+com/sap/cc/ascii/AsciiArtServiceClientTest.class
+com/sap/cc/users/UserStorageTest.class
+com/sap/cc/users/IntegrationTest.class
+com/sap/cc/users/UserControllerTest.class
+com/sap/cc/users/PrettyUserPageCreatorTest.class

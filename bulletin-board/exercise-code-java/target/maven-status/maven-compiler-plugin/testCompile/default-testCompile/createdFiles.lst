@@ -1,0 +1,4 @@
+com/sap/cc/bulletinboard/ads/InMemoryAdvertisementStorageTest.class
+com/sap/cc/bulletinboard/ads/SmokeTests.class
+com/sap/cc/bulletinboard/BulletinboardAdsApplicationTests.class
+com/sap/cc/bulletinboard/ads/AdvertisementControllerTest.class

@@ -1,0 +1,7 @@
+com/sap/cc/books/CustomExceptionMapper.class
+com/sap/cc/books/BookStorage.class
+com/sap/cc/books/NotFoundException.class
+com/sap/cc/books/BookController.class
+com/sap/cc/books/SpringBootBooksApplication.class
+com/sap/cc/books/Book.class
+com/sap/cc/books/InMemoryBookStorage.class

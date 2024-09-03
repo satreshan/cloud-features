@@ -1,0 +1,12 @@
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/users/UserController.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/users/PrettyUserPageCreator.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/users/UserStorage.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/ascii/AsciiArtResponse.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/ascii/BaseUrlProvider.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/users/User.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/SpringBootUsersApplication.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/NotFoundException.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/ascii/AsciiArtRequest.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/users/InMemoryUserStorage.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/InvalidRequestException.java
+/Users/i320726/Documents/GitHub/cloud-fun/service2service-java/src/main/java/com/sap/cc/ascii/AsciiArtServiceClient.java

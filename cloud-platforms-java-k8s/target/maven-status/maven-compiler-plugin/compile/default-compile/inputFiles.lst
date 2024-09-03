@@ -1,0 +1,6 @@
+/Users/i320726/Documents/GitHub/cloud-fun/cloud-platforms-java-k8s/src/main/java/com/sap/cc/fortunecookies/FortuneCookieApp.java
+/Users/i320726/Documents/GitHub/cloud-fun/cloud-platforms-java-k8s/src/main/java/com/sap/cc/fortunecookies/Quote.java
+/Users/i320726/Documents/GitHub/cloud-fun/cloud-platforms-java-k8s/src/main/java/com/sap/cc/fortunecookies/FortuneCookieController.java
+/Users/i320726/Documents/GitHub/cloud-fun/cloud-platforms-java-k8s/src/main/java/com/sap/cc/fortunecookies/FortuneCookieRepository.java
+/Users/i320726/Documents/GitHub/cloud-fun/cloud-platforms-java-k8s/src/main/java/db/migration/V1__CreateSchema.java
+/Users/i320726/Documents/GitHub/cloud-fun/cloud-platforms-java-k8s/src/main/java/db/migration/V2__LoadQuotes.java

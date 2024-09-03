@@ -1,0 +1,10 @@
+com/sap/cc/bulletinboard/ads/Advertisement.class
+com/sap/cc/bulletinboard/InvalidRequestException.class
+com/sap/cc/bulletinboard/ads/AdvertisementController.class
+com/sap/cc/bulletinboard/ads/AdvertisementRepository.class
+com/sap/cc/bulletinboard/rating/RatingServiceClient.class
+com/sap/cc/bulletinboard/NotFoundException.class
+com/sap/cc/bulletinboard/rating/BaseUrlProvider.class
+com/sap/cc/bulletinboard/BulletinboardAdsApplication.class
+com/sap/cc/bulletinboard/rating/RatingResponse.class
+com/sap/cc/bulletinboard/ads/InMemoryAdvertisementStorage.class

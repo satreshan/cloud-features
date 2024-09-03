@@ -1,0 +1,4 @@
+com/sap/cc/library/book/Book.class
+com/sap/cc/library/BooksApplication.class
+com/sap/cc/library/book/BookRepository.class
+com/sap/cc/library/book/Author.class

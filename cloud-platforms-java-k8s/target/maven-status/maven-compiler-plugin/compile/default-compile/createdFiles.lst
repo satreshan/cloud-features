@@ -1,0 +1,6 @@
+com/sap/cc/fortunecookies/FortuneCookieApp.class
+db/migration/V1__CreateSchema.class
+com/sap/cc/fortunecookies/Quote.class
+com/sap/cc/fortunecookies/FortuneCookieController.class
+db/migration/V2__LoadQuotes.class
+com/sap/cc/fortunecookies/FortuneCookieRepository.class
