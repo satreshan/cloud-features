@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bb-reviews
+spec:
+  selector:
+    matchLabels:
+      app: bb-reviews
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bb-reviews
+    spec:
+      containers:
+        - name: app
+          image: cc-ms-k8s-training.common.repositories.cloud.sap/bb-reviews-i583822:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9090
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://bb-reviews-db/postgres
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bb-reviews
+spec:
+  selector:
+    app: bb-reviews
+  ports:
+    - name: app
+      port: 9090
+      targetPort: 9090
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert.gardener.cloud/purpose: managed
+    nginx.ingress.kubernetes.io/proxy-body-size: 150m
+  name: bb-reviews
+spec:
+  rules:
+    - host: app.ingress.fun.i583822.shoot.canary.k8s-hana.ondemand.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: bb-reviews
+              port:
+                number: 9090
+          path: /
+          pathType: Prefix
+  tls:
+    - hosts:
+      - app.ingress.fun.i583822.shoot.canary.k8s-hana.ondemand.com
+      secretName: app-certs

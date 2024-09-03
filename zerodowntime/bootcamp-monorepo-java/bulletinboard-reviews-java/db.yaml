@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bb-reviews-db
+spec:
+  selector:
+    matchLabels:
+      app: bb-reviews-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bb-reviews-db
+    spec:
+      containers:
+        - name: app
+          image: postgres:11-alpine
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 5432
+          env:
+          - name: POSTGRES_HOST_AUTH_METHOD
+            value: trust
+          - name: PGDATA
+            value: /var/lib/postgresql/data/pgdata
+          volumeMounts:
+            - name: storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: database-bb-reviews
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bb-reviews-db
+spec:
+  selector:
+    app: bb-reviews-db
+  ports:
+    - name: db
+      port: 6543
+      targetPort: 5432
+  type: ClusterIP
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database-bb-reviews
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+      

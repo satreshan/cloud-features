@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bb-ads
+spec:
+  selector:
+    matchLabels:
+      app: bb-ads
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 20%
+      maxUnavailable: 0%
+  template:
+    metadata:
+      labels:
+        app: bb-ads
+    spec:
+      containers:
+        - name: app
+          image: cc-ms-k8s-training.common.repositories.cloud.sap/bb-ads-i583822:v8
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://bb-ads-db/postgres
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+          resources:
+            limits:
+              cpu: 200m
+            requests:
+              cpu: 100m
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bb-ads
+spec:
+  selector:
+    app: bb-ads
+  ports:
+    - name: app
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert.gardener.cloud/purpose: managed
+    nginx.ingress.kubernetes.io/proxy-body-size: 150m
+  name: bb-ads
+spec:
+  rules:
+    - host: app.ingress.fun.myproj.shoot.canary.k8s-hana.ondemand.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: bb-ads
+              port:
+                number: 8080
+          path: /
+          pathType: Prefix
+  tls:
+    - hosts:
+      - app.ingress.fun.myproj.shoot.canary.k8s-hana.ondemand.com
+      secretName: app-certs
